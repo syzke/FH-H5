@@ -1,0 +1,151 @@
+body {
+  cursor: default;
+  padding: 0;
+  border: 0;
+  margin: 0;
+
+  text-align: center;
+  background-color: white;
+  font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+
+body, canvas, div {
+  outline: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Remove spin of input type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+#Cocos2dGameContainer {
+  position: absolute;
+  margin: 0;
+  overflow: hidden;
+  left: 0px;
+  top: 0px;
+}
+
+canvas {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+a:link, a:visited {
+  color: #000;
+}
+
+a:active, a:hover {
+  color: #666;
+}
+
+p.header {
+  font-size: small;
+}
+
+p.footer {
+  font-size: x-small;
+}
+
+#splash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: #f9f9f9 url(./splash.b5be8.png) no-repeat center;
+  background-size: 350px;
+}
+
+/* .progress-bar {
+    background-color: #1a1a1a;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    height: 5px;
+    width: 300px;
+    margin: 0 -150px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;           
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+    transition: width .4s ease-in-out; 
+    background-color: #3dc5de;
+} */
+
+/* 进度条容器 */
+.progress-bar {
+  /* position: absolute; */
+  position: relative;
+  left: 27.5%;
+  top: 80%;
+  height: 10px;
+  padding: 2px;
+  width: 45%;
+  border-radius: 5px;
+  background-color: #7b7272; /* 浅灰色背景，增加与白色背景的对比 */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* 轻微的阴影 */
+  overflow: hidden; /* 隐藏超出部分 */
+}
+
+/* 进度条填充部分 */
+.progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease-in-out;
+  background-color: #09c; /* 蓝色填充条，高对比度 */
+}
+
+.stripes span {
+    background-size: 30px 30px;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                        transparent 75%, transparent);            
+    
+    animation: animate-stripes 1s linear infinite;             
+}
+
+#progressNumber {
+  position: absolute;
+  left: 50%; /* 水平居中 */
+  top: 100%; /* 放置在.progress-bar的底部 */
+  transform: translateX(-50%); /* 垂直方向上进行偏移，以确保居中对齐 */
+  font-size: 16px;
+  color: rgb(16, 131, 169);
+  white-space: nowrap; /* 防止数字换行 */
+}
+
+@keyframes animate-stripes {
+    0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+}
+
+h1 {
+    color: #444;
+    text-shadow: 3px 3px 15px;
+}
+
+#GameDiv {
+    width: 800px;
+    height: 450px;
+    margin: 0 auto;
+    background: black;
+    position: relative;
+    border: 3px solid black;
+    border-radius: 6px;
+    box-shadow: 0 5px 40px #333
+}
+
